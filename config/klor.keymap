@@ -55,7 +55,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 
-            tap-ms = <500>;
+            tap-ms = <50>;
             label = "scroll_up_down";
         };
 
@@ -64,7 +64,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
 
-            tap-ms = <500>;   // Ensures the event is very brief
+            tap-ms = <50>;   // Ensures the event is very brief
             label = "scroll_left_right";
         };
     };
