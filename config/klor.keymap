@@ -12,9 +12,8 @@
 //
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
-#define ZMK_MOUSE_SCRL_VAL 140
+#define ZMK_MOUSE_SCRL_VAL 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 10
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -32,7 +31,7 @@
 &sensors {
     left_encoder { triggers-per-rotation = <15>; };
 
-    right_encoder { triggers-per-rotation = <15>; };
+    right_encoder { triggers-per-rotation = <4>; };
 };
 
 / {
@@ -51,7 +50,6 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-
             tap-ms = <20>;
         };
 
@@ -59,8 +57,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
-
-            tap-ms = <20>;
+            tap-ms = <20>;   // Ensures the event is very brief
         };
 
     };
