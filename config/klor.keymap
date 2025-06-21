@@ -12,8 +12,9 @@
 //
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-#define ZMK_MOUSE_SCRL_VAL 10
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1200  // 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
+#define ZMK_MOUSE_SCRL_VAL 140
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -53,7 +54,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 
-            tap-ms = <20>;
+            tap-ms = <500>;
             label = "scroll_up_down";
         };
 
@@ -62,7 +63,8 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
 
-            tap-ms = <20>;   // Ensures the event is very brief
+            tap-ms = <500>;   // Ensures the event is very brief
+            label = "scroll_left_right";
         };
     };
 
