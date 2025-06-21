@@ -32,7 +32,7 @@
 &sensors {
     left_encoder { triggers-per-rotation = <15>; };
 
-    right_encoder { triggers-per-rotation = <4>; };
+    right_encoder { triggers-per-rotation = <15>; };
 };
 
 / {
