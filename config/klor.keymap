@@ -16,7 +16,6 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 25   // 10
 #define ZMK_MOUSE_SCRL_VAL 140
 
-#include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -66,7 +65,7 @@
             label = "scroll_left_right";
         };
 
-        &ext_power EP_OFF
+        
     };
 
     combos {
