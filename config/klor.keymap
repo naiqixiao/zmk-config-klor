@@ -65,6 +65,7 @@
             tap-ms = <150>;   // Ensures the event is very brief
             label = "scroll_left_right";
         };
+
     };
 
     combos {
@@ -112,6 +113,18 @@
                 <&kp LS(T)>,
                 <&macro_release>,
                 <&kp LCTRL>;
+        };
+
+        cmd_tab_macro: cmd_tab_macro {
+            compatible = "zmk,behavior-macro";
+            label = "CMD_TAB_MACRO";
+            #binding-cells = <0>;
+            macro-press = <
+                &mm LCMD     // Modifier down
+                &wait-ms 20
+                &kp TAB      // Tap Tab
+                &mr LCMD     // Modifier release
+            >;
         };
     };
 
