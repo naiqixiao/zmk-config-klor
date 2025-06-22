@@ -43,7 +43,6 @@
         sensors = <&left_encoder &right_encoder>;
     };
 
-	// TODO: RGB node(s)
 };
 
 &pro_micro_i2c {
