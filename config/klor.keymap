@@ -119,7 +119,7 @@
             compatible = "zmk,behavior-macro";
             label = "CMD_TAB_MACRO";
             #binding-cells = <0>;
-            macro-press =
+            bindings =
                 <&macro_press>,
                 <&mm LCMD>,
                 <&macro_tap>,
