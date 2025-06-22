@@ -165,10 +165,10 @@
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
 
             bindings = <
-                 &kp TAB   &none  &kp PLUS          &kp MINUS  &kp LBRC                        &kp RBRC  &kp LEFT  &kp UP         &kp RIGHT  &kp RSHFT
-&rgb_ug RGB_BRI  &kp CAPS  &none  &kp PLUS          &kp MINUS  &kp LBKT                        &kp RBKT  &none     &kp DOWN       &none      &kp PSCRN  &kp PG_UP
-&rgb_ug RGB_BRD  &none     &none  &kp ASTRK         &kp SLASH  &kp LPAR  &kp C_MUTE  &kp C_PP  &kp RPAR  &none     &kp BACKSLASH  &none      &kp END    &kp PG_DN
-                                  &kp LEFT_COMMAND  &kp LALT   &none     &none       &none     &mo 3     &none     &none
+                 &kp TAB   &none  &kp PLUS          &kp MINUS  &kp LBRC                        &kp RBRC  &kp LEFT          &kp UP         &kp RIGHT           &kp RSHFT
+&rgb_ug RGB_BRI  &kp CAPS  &none  &kp PLUS          &kp MINUS  &kp LBKT                        &kp RBKT  &kp RC(UP_ARROW)  &kp DOWN       &kp RG(TAB)         &kp PSCRN  &kp PG_UP
+&rgb_ug RGB_BRD  &none     &none  &kp ASTRK         &kp SLASH  &kp LPAR  &kp C_MUTE  &kp C_PP  &kp RPAR  &kp F4            &kp BACKSLASH  &kp RC(DOWN_ARROW)  &kp END    &kp PG_DN
+                                  &kp LEFT_COMMAND  &kp LALT   &none     &none       &none     &mo 3     &none             &none
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &scroll_left_right>;
