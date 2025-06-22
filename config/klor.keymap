@@ -236,7 +236,7 @@
                           &none  &none  &none  &none       &none     &none  &none  &none
 
 // External Power Control: Toggle, On, Off
-&ext_power_ctrl EP_TOGGLE &ext_power_ctrl EP_ON &ext_power_ctrl EP_OFF
+// &ext_power_ctrl EP_TOGGLE &ext_power_ctrl EP_ON &ext_power_ctrl EP_OFF
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
