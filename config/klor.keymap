@@ -119,12 +119,13 @@
             compatible = "zmk,behavior-macro";
             label = "CMD_TAB_MACRO";
             #binding-cells = <0>;
-            macro-press = <
-                &mm LCMD     // Modifier down
-                &wait-ms 20
-                &kp TAB      // Tap Tab
-                &mr LCMD     // Modifier release
-            >;
+            macro-press =
+                <&macro_press>,
+                <&mm LCMD>,
+                <&macro_tap>,
+                <&kp TAB>,
+                <&macro_release>,
+                <&mr LCMD>;
         };
     };
 
