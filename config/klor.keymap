@@ -65,15 +65,6 @@
             tap-ms = <150>;   // Ensures the event is very brief
             label = "scroll_left_right";
         };
-
-        /* --- External Power Control --- */
-
-        ext_power_ctrl: ext_power_ctrl {
-            compatible = "zmk,behavior-ext-power";
-            label = "External Power Control";
-            #binding-cells = <1>;
-            states = <EP_ON EP_OFF EP_TOGGLE>;
-        };
     };
 
     combos {
