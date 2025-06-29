@@ -137,7 +137,7 @@
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
 
             bindings = <
-       &kp Q         &kp W               &kp E             &kp R               &kp T                        &kp Y  &hm UNDER U  &hm EXCLAMATION I      &kp O             &kp P
+       &kp Q         &kp W               &kp E             &kp R               &kp T                        &kp Y  &hm UNDER U  &hm EXCLAMATION I      &mt SEMICOLON O   &kp P
 &none  &kp A         &hm LEFT_CONTROL S  &hm LEFT_ALT D    &hm LEFT_COMMAND F  &kp G                        &kp H  &hm RCMD J   &hm RALT K             &hm RSHFT L       &kp RETURN     &none
 &none  &hm LSHIFT Z  &kp X               &kp C             &kp V               &kp B  &kp C_MUTE  &kp C_PP  &kp N  &kp M        &hm SQT COMMA          &hm QUESTION DOT  &kp BACKSPACE  &none
                                          &kp LEFT_CONTROL  &kp SPACE           &mo 1  &none       &none     &mo 2  &kp SPACE    &hm TILDE EXCLAMATION
