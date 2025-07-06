@@ -187,7 +187,11 @@
                            &kp LEFT_COMMAND  &kp LALT    &none     &none       &none     &mo 3     &kp RGUI          &kp RS(RA(F))
             >;
 
-            sensor-bindings = <&kp LC(SPACE) &kp LC(SPACE) &scroll_left_right>;
+            sensor-bindings = <
+                /* left encoder CW   */ &kp LCTRL &kp SPACE
+                /* left encoder CCW  */ &kp LCTRL &kp SPACE
+                /* right encoder     */ &scroll_left_right
+            >;
         };
 
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
