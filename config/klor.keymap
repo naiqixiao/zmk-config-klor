@@ -187,7 +187,7 @@
                            &kp LEFT_COMMAND  &kp LALT    &none     &none       &none     &mo 3     &kp RGUI          &kp RS(RA(F))
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(SPACE) LC(SPACE) &scroll_left_right>;
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &scroll_left_right>;
         };
 
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -215,7 +215,7 @@
                          &kp TAB            &kp LEFT_COMMAND       &kp CAPS   &none       &none     &none      &kp RG(SPACE)  &mt LALT SPACE
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;
+            sensor-bindings = <&inc_dec_kp LC(SPACE) LC(SPACE) &inc_dec_kp C_NEXT C_PREV>;
         };
 
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
