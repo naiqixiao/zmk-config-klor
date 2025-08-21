@@ -162,10 +162,10 @@
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
 
             bindings = <
-       &ht_300ms DOUBLE_QUOTES Q  &ht_300ms GRAVE W   &kp E           &kp R               &kp T                        &kp Y          &hm UNDER U  &hm EXCLAMATION I  &ht_300ms SEMICOLON O  &kp P
-&none  &ht_300ms AT A             &hm LEFT_CONTROL S  &hm LEFT_ALT D  &hm LEFT_COMMAND F  &kp G                        &kp H          &hm RCMD J   &hm RALT K         &hm RSHFT L            &kp RETURN  &none
-&none  &hm LSHIFT Z               &kp X               &kp C           &kp V               &kp B  &kp C_MUTE  &kp C_PP  &kp N          &kp M        &hm SQT COMMA      &hm QUESTION DOT       &kp SLASH   &none
-                                                      &kp GLOBE       &kp TAB             &mo 1  &none       &none     &kp BACKSPACE  &kp SPACE    &mo 2
+       &ht_300ms DOUBLE_QUOTES Q  &ht_300ms GRAVE W   &kp E           &kp R               &kp T                              &kp Y          &hm UNDER U  &hm EXCLAMATION I  &ht_300ms SEMICOLON O  &kp P
+&none  &ht_300ms AT A             &hm LEFT_CONTROL S  &hm LEFT_ALT D  &hm LEFT_COMMAND F  &hm LS(G) G                        &kp H          &hm RCMD J   &hm RALT K         &hm RSHFT L            &kp RETURN  &none
+&none  &kp Z                      &kp X               &kp C           &kp V               &kp B        &kp C_MUTE  &kp C_PP  &kp N          &kp M        &hm SQT COMMA      &hm QUESTION DOT       &kp SLASH   &none
+                                                      &kp GLOBE       &kp TAB             &mo 1        &none       &none     &kp BACKSPACE  &kp SPACE    &mo 2
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &scroll_up_down>;
@@ -190,10 +190,10 @@
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
 
             bindings = <
-       &kp TAB   &kp TAB   &kp HASH        &kp DOLLAR  &kp LBRC                        &kp RBRC    &kp RC(UP_ARROW)  &kp UP    &kp RG(TAB)         &kp RSHFT
-&none  &kp CAPS  &kt CAPS  &kp PLUS        &kp MINUS   &kp LBKT                        &kp RBKT    &kp LEFT          &kp UP    &kp RIGHT           &kp C_NEXT  &none
-&none  &none     &kp TAB   &kp ASTRK       &kp SLASH   &kp LPAR  &kp C_MUTE  &kp C_PP  &kp RPAR    &kp TAB           &kp DOWN  &kp RC(DOWN_ARROW)  &kp C_PREV  &none
-                           &kp LEFT_SHIFT  &kp LALT    &none     &none       &none     &kp DELETE  &kp RGUI          &mo 3
+       &kp TAB   &kp PERCENT  &kp HASH        &kp DOLLAR  &kp LBRC                        &kp RBRC    &kp RC(UP_ARROW)  &kp EQUAL  &kp RG(TAB)         &kp RSHFT
+&none  &kp CAPS  &kt CAPS     &kp PLUS        &kp MINUS   &kp LBKT                        &kp RBKT    &kp LEFT          &kp UP     &kp RIGHT           &kp C_NEXT  &none
+&none  &none     &kp TAB      &kp ASTRK       &kp SLASH   &kp LPAR  &kp C_MUTE  &kp C_PP  &kp RPAR    &kp TAB           &kp DOWN   &kp RC(DOWN_ARROW)  &kp C_PREV  &none
+                              &kp LEFT_SHIFT  &kp LALT    &none     &none       &none     &kp DELETE  &kp RGUI          &mo 3
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &scroll_left_right>;
