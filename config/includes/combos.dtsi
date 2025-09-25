@@ -6,6 +6,30 @@
   combos {
     compatible = "zmk,combos";
 
+    combo_esc {
+        timeout-ms = <50>;
+        key-positions = <0 1>;
+        bindings = <&kp ESC>;
+    };
+
+    combo_closetab {
+        timeout-ms = <50>;
+        key-positions = <1 2>;
+        bindings = <&macro_closetab>;
+    };
+
+    combo_lasttab {
+        timeout-ms = <50>;
+        key-positions = <2 3>;
+        bindings = <&macro_lasttab>;
+    };
+
+    caps {
+        bindings = <&kp CAPS>;
+        key-positions = <11 12>;
+        timeout-ms = <50>;
+    };
+
     // combo_bracket_round_l {
     //   timeout-ms = <COMBO_TERM_FAST>;
     //   require-prior-idle-ms = <COMBO_PRIOR_IDLE>;

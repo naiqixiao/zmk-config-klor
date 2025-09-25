@@ -11,6 +11,30 @@
 / {
     macros {
 
+        macro_closetab: macro_closetab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp F4>,
+                <&macro_release>,
+                <&kp LCTRL>;
+        };
+
+        macro_lasttab: macro_lasttab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCTRL>,
+                <&macro_tap>,
+                <&kp LS(T)>,
+                <&macro_release>,
+                <&kp LCTRL>;
+        };
+        
         m_type_email_p: type_email_p {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;

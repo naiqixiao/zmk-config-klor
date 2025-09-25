@@ -1,0 +1,60 @@
+/ {
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
+        ht_300ms: hold_tap_300ms {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_300MS";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
+        scroll_up_down: scroll_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+
+            tap-ms = <150>;
+            label = "scroll_up_down";
+        };
+
+        scroll_left_right: scroll_left_right {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
+
+            tap-ms = <150>;   // Ensures the event is very brief
+            label = "scroll_left_right";
+        };
+
+        change_input_method: change_input_method {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp LC(SPACE)>, <&kp LC(SPACE)>;
+
+            tap-ms = <150>;   // Ensures the event is very brief
+            label = "change_input_method";
+        };
+
+        ht_500: ht_500 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_500";
+            #binding-cells = <2>;
+            tapping-term-ms = <500>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+};

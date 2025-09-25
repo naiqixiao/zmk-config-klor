@@ -23,14 +23,27 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+#ifdef HAS_MOUSE_KEYS
+#include <dt-bindings/zmk/mouse.h>
+#endif
+
+#ifdef HAS_PS2
+#include <dt-bindings/zmk/mouse_settings.h>
+#endif
+
 // Personal includes
 #include "includes/settings.dtsi"
-//#include "includes/conditional_layers.dtsi"
 #include "includes/macros.dtsi"
+#include "includes/behaviours.dtsi"
 #include "includes/combos.dtsi"
 #include "includes/behaviours_homerow_mods.dtsi"
 #include "includes/behaviours_mod_morph.dtsi"
-//#include "includes/behaviours_other.dtsi"
+
+// Enable Mouse Keys
+
+#ifdef HAS_MOUSE_KEYS
+#include "includes/mouse_keys.dtsi"
+#endif
 
 #define BASE   0
 #define RAISE  1
@@ -46,118 +59,6 @@
 };
 
 / {
-    behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        ht_300ms: hold_tap_300ms {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_300MS";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        scroll_up_down: scroll_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-
-            tap-ms = <150>;
-            label = "scroll_up_down";
-        };
-
-        scroll_left_right: scroll_left_right {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_LEFT>, <&msc SCRL_RIGHT>;
-
-            tap-ms = <150>;   // Ensures the event is very brief
-            label = "scroll_left_right";
-        };
-
-        change_input_method: change_input_method {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&kp LC(SPACE)>, <&kp LC(SPACE)>;
-
-            tap-ms = <150>;   // Ensures the event is very brief
-            label = "change_input_method";
-        };
-
-        ht_500: ht_500 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_500";
-            #binding-cells = <2>;
-            tapping-term-ms = <500>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-    };
-
-    combos {
-        compatible = "zmk,combos";
-
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-
-        combo_closetab {
-            timeout-ms = <50>;
-            key-positions = <1 2>;
-            bindings = <&macro_closetab>;
-        };
-
-        combo_lasttab {
-            timeout-ms = <50>;
-            key-positions = <2 3>;
-            bindings = <&macro_lasttab>;
-        };
-
-        caps {
-            bindings = <&kp CAPS>;
-            key-positions = <11 12>;
-            timeout-ms = <50>;
-        };
-    };
-
-    macros {
-        macro_closetab: macro_closetab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp F4>,
-                <&macro_release>,
-                <&kp LCTRL>;
-        };
-
-        macro_lasttab: macro_lasttab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp LS(T)>,
-                <&macro_release>,
-                <&kp LCTRL>;
-        };
-    };
 
     keymap {
         compatible = "zmk,keymap";
