@@ -1,0 +1,4 @@
+build/*
+config/boards/shields/klor/scripts.sh
+*.DS_Store
+.west/config
