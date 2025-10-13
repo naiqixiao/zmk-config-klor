@@ -34,6 +34,18 @@
 
 &led_strip { chain-length = <21>; };
 
+#define XXX &none
+#define TODO ___
+#define ___ &trans
+
+#define BASE 0
+#define NAV 1
+#define NUM 2
+#define FUN 3
+#define UTIL 4
+
+#include "combos.dtsi"
+
 /* ------------------------ general config ----------------------- */
 
 #define QUICK_TAP_MS 175
@@ -88,26 +100,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
 / {
     behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        ht_300ms: hold_tap_300ms {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_300MS";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
+    
         scroll_up_down: scroll_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
@@ -135,26 +128,11 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
             label = "change_input_method";
         };
 
-        ht_500: ht_500 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_500";
-            #binding-cells = <2>;
-            tapping-term-ms = <500>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
     };
 
     combos {
         compatible = "zmk,combos";
-
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-
+        /*
         combo_closetab {
             timeout-ms = <50>;
             key-positions = <1 2>;
@@ -165,13 +143,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
             timeout-ms = <50>;
             key-positions = <2 3>;
             bindings = <&macro_lasttab>;
-        };
-
-        caps {
-            bindings = <&kp CAPS>;
-            key-positions = <11 12>;
-            timeout-ms = <50>;
-        };
+        }; */
     };
 
     macros {
@@ -206,26 +178,14 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
         base_layer {
-            // ┌───────────────────────────────────────────────────────────┐
 
             label = "BASE";
 
-            // └───────────────────────────────────────────────────────────┘
-            /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-             │    Q    │    W    │    E    │    R    │    T    │                    │    Y    │    U    │    I    │    O    │    P    │   
-   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │   TAB   │    A    │    S    │    D    │    F    │    G    │                    │    H    │    J    │    K    │    L    │    ;    │    '    │
-   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-   │   CTRL  │    Z    │    X    │    C    │    V    │    B    ││  MUTE  ││PLY/PSE ││    N    │    M    │    ,    │    .    │    /    │    \    │
-   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                 │  LCMD   │  LOWER  │  RALT   │  SPACE  ││  BSPCE  │  ENTER  │  RAISE  │    DEL  │  
-                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
-
             bindings = <
-       &hml DOUBLE_QUOTES Q  &hml GRAVE W         &kp E               &kp R                   &kp T                                       &kp Y          &hmr UNDER U  &hmr EXCLAMATION I  &hmr SEMICOLON O   &kp P
-&none  &hml AT A             &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_COMMAND F  &hml LEFT_SHIFT G                        &kp H          &hmr RCMD J   &hmr RALT K         &hmr RSHFT L       &kp RETURN  &none
-&none  &kp Z                    &kp X                   &kp C               &kp V                   &kp B                 &kp C_MUTE  &kp C_PP  &kp N          &kp M            &hmr SQT COMMA      &hmr QUESTION DOT  &kp SLASH   &none
-                                                        &kp GLOBE           &kp TAB                 &mo 1                 &none       &none     &kp BACKSPACE  &kp SPACE        &mo 2
+	                    &hml DOUBLE_QUOTES  Q   &hml GRAVE W    &kp E	&kp R	&kp T				&kp Y	&hmr UNDER U	&hmr EXCLAMATION I	&hmr SEMICOLON O	&kp P	
+                XXX	&hml LEFT_SHIFT A	&hml LEFT_CONTROL S	&hml LEFT_ALT D	&hml LEFT_COMMAND F	&hml AT G				&kp H	&hmr RCMD J	&hmr RALT K	&hmr RSHFT L	&kp RETURN	XXX
+                XXX	&kp Z	&kp X	&kp C	&kp V	&kp B	&kp C_MUTE		&kp C_PP	&kp N	&kp M	&hmr SQT COMMA	&hmr QUESTION DOT	&kp SLASH	XXX
+			                                    XXX	&lt NUM TAB	&lt NAV SPACE	XXX		XXX	&kp BACKSPACE	&kp SPACE	&mo FUN
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &scroll_up_down>;
@@ -233,27 +193,14 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-        raise_layer {
-            // ┌───────────────────────────────────────────────────────────┐
-
-            label = "RAISE";
-
-            // └───────────────────────────────────────────────────────────┘
-          /*          ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-                      │ RGB_SPI │ RGB_HUI │         │         │    {    │                    │    }    │   LEFT  │   UP    │  RIGHT  │   HOME  │
-            ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-            │ RGB_BRI │ RGB_EFF │         │         │         │    [    │                    │    ]    │         │  DOWN   │         │  PSCRN  │  P UP   │
-            ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-            │ RGB_BRD │ RGB_SPD │ RGB_HUD │         │         │    (    ││  MUTE  ││PLY/PASE││    )    │         │         │         │   END   │ P DOWN  │
-            └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                          │         │         │         │  LSHIFT ││  RSHIFT │         │         │  ADJUST │  
-                                          └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
+        nav_layer {
+            label = "NAV";
 
             bindings = <
-       &kp TAB         &kp PERCENT  &kp HASH        &kp DOLLAR  &kp LBRC                        &kp RBRC    &kp RC(UP_ARROW)  &kp EQUAL  &kp RG(TAB)         &kp RSHFT
-&none  &kp CAPS        &kt CARET    &kp PLUS        &kp MINUS   &kp LBKT                        &kp RBKT    &kp LEFT          &kp UP     &kp RIGHT           &kp C_NEXT  &none
-&none  &kp LEFT_SHIFT  &kp BSLH     &kp ASTRK       &kp SLASH   &kp LPAR  &kp C_MUTE  &kp C_PP  &kp RPAR    &kp TAB           &kp DOWN   &kp RC(DOWN_ARROW)  &kp C_PREV  &none
-                                    &kp LEFT_SHIFT  &kp LALT    &none     &none       &none     &kp DELETE  &kp RGUI          &mo 3
+       XXX        XXX  XXX        XXX  XXX                        XXX    &kp RC(UP_ARROW)  &kp EQUAL  &kp RG(TAB)         &kp RSHFT
+XXX  &sk LEFT_SHIFT    &sk LEFT_CONTROL    	&sk LEFT_ALT   	&sk LEFT_COMMAND   XXX                       &kp PG_UP    &kp LEFT          &kp UP     &kp RIGHT           &kp C_NEXT  XXX
+XXX  XXX  XXX     XXX       XXX   XXX  &kp C_MUTE  &kp C_PP  &kp PG_DN    &kp TAB           &kp DOWN   &kp RC(DOWN_ARROW)  &kp C_PREV  XXX
+                                    &kp LEFT_SHIFT  &kp LALT    XXX     XXX       XXX     &kp DELETE  &kp RGUI          &mo 3
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &scroll_left_right>;
@@ -261,27 +208,15 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-        lower_layer {
-            // ┌───────────────────────────────────────────────────────────┐
+        num_layer {
 
-            label = "LOWER";
-
-            // └───────────────────────────────────────────────────────────┘
-            /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-             │   F1    │   F2    │   F3    │   F4    │   F5    │                    │   F6    │   F7    │   F8    │   F9    │   F10   │
-   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │    -    │    !    │    @    │    #    │    $    │    %    │                    │    ^    │    &    │    `    │    ~    │    =    │    +    │
-   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-   │    _    │    1    │    2    │    3    │    4    │    5    ││  MUTE  ││PLY/PASE││    6    │    7    │    8    │    9    │    0    │    *    │
-   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                 │         │         │         │  LSHIFT ││  RSHIFT │         │         │         │  
-                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
+            label = "NUM";
 
             bindings = <
-       &kp NUMBER_7  &kp N7  &kp N8   &kp N9            &kp F5                           &kp F6         &kp F7         &kp F8     &kp F9     &kp F10
-&none  &kp NUMBER_4  &kp N4  &kp N5   &kp N6            &kp PRCNT                        &kp CARET      &kp AMPS       &kp GRAVE  &kp TILDE  &kp EQUAL  &none
-&none  &kp N1        &kp N1  &kp N2   &kp N3            &kp N0     &kp C_MUTE  &kp C_PP  &kp N6         &kp F1         &kp F2     &kp N9     &kp N0     &none
-                             &kp TAB  &kp LEFT_COMMAND  &kp CAPS   &none       &none     &kp LC(SPACE)  &kp RG(SPACE)  &trans
+       XXX   &kp F9  &kp F10  &kp F11     &kp F12               XXX &kp N7         &kp N8     &kp N9     XXX
+XXX   XXX   &kp F5   &kp F6   &kp F7    &kp F8                       &kp PERCENT      &kp N4       &kp N5  &kp N6  &kp EQUAL  XXX
+XXX   XXX   &kp F1  &kp F2   &kp F3     &kp F4     &kp C_MUTE  &kp C_PP  &kp N0        &kp N1         &kp N2     &kp N3     &kp DOT     XXX
+                             &kp TAB  &kp LEFT_COMMAND  &kp CAPS   XXX       XXX     &kp LC(SPACE)  &kp RG(SPACE)  &trans
             >;
 
             sensor-bindings =
@@ -291,27 +226,17 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
         // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
-        adjust_layer {
+        fun_layer {
             // ┌───────────────────────────────────────────────────────────┐
 
-            label = "ADJUST";
+            label = "FUN";
 
-            // └───────────────────────────────────────────────────────────┘
-            /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-             │ BT_CLR  │         │         │         │         │                    │         │         │         │         │ BT_CLR  │
-   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │         │ BT_NXT  │         │         │         │         │                    │         │         │         │         │ BT_NXT  │         │
-   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-   │         │ BT_PRV  │         │         │         │         ││  MUTE  ││PLY/PASE││         │         │         │         │ BT_PRV  │         │
-   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                 │         │         │         │         ││         │         │         │         │  
-                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
 
             bindings = <
-       &bt BT_CLR  &none  &none  &none          &none                                    &none             &none  &none  &none  &bt BT_CLR
-&none  &bt BT_NXT  &none  &none  &kp LS(LA(F))  &none                                    &none             &none  &none  &none  &bt BT_NXT  &none
-&none  &bt BT_PRV  &none  &none  &none          &ext_power EP_OFF  &kp C_MUTE  &kp C_PP  &ext_power EP_ON  &none  &none  &none  &bt BT_PRV  &none
-                          &none  &none          &none              &none       &none     &none             &none  &none
+       &bt BT_CLR  XXX  XXX  XXX          XXX                                    XXX             XXX  XXX  XXX  &bt BT_CLR
+XXX  &bt BT_NXT  &kp LS(LG(N3))  &kp LS(LG(N4))  &kp LS(LA(F))  XXX           XXX             XXX  XXX  XXX  &bt BT_NXT  XXX
+XXX  &bt BT_PRV  XXX  XXX  XXX          &ext_power EP_OFF  &kp C_MUTE  &kp C_PP  &ext_power EP_ON  XXX  XXX  XXX  &bt BT_PRV  XXX
+                          XXX  XXX          XXX              XXX       XXX     XXX             XXX  XXX
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_NEXT C_PREV>;

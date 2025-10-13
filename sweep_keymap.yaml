@@ -1,0 +1,180 @@
+layout: {zmk_keyboard: klor}
+layers:
+  BASE:
+  - - {t: Q, h: '"'}
+    - {t: W, h: '`'}
+    - E
+    - R
+    - T
+    - Y
+    - {t: U, h: _}
+    - {t: I, h: '!'}
+    - {t: O, h: ;}
+    - P
+  - - ''
+    - {t: A, h: LEFT SHIFT}
+    - {t: S, h: LEFT CONTROL}
+    - {t: D, h: LEFT ALT}
+    - {t: F, h: LEFT COMMAND}
+    - {t: G, h: '@'}
+    - H
+    - {t: J, h: RCMD}
+    - {t: K, h: RALT}
+    - {t: L, h: RSHFT}
+  - [RETURN, '', '', Z, X, C, V, B, MUTE, PP]
+  - - N
+    - M
+    - {t: ',', h: ''''}
+    - {t: ., h: '?'}
+    - /
+    - ''
+    - ''
+    - {t: TAB, h: NUM}
+    - {t: SPACE, h: NAV}
+    - ''
+  - ['', BACKSPACE, SPACE, FUN]
+  NAV:
+  - ['', '', '', '', '', '', Ctl+UP ARROW, '=', Gui+TAB, RSHFT]
+  - - ''
+    - {t: LEFT SHIFT, h: sticky}
+    - {t: LEFT CONTROL, h: sticky}
+    - {t: LEFT ALT, h: sticky}
+    - {t: LEFT COMMAND, h: sticky}
+    - ''
+    - PG UP
+    - LEFT
+    - UP
+    - RIGHT
+  - [NEXT, '', '', '', '', '', '', '', MUTE, PP]
+  - - PG DN
+    - TAB
+    - DOWN
+    - Ctl+DOWN ARROW
+    - PREV
+    - ''
+    - LEFT SHIFT
+    - LALT
+    - {type: held}
+    - ''
+  - ['', DELETE, RGUI, FUN]
+  NUM:
+  - ['', F9, F10, F11, F12, '', '7', '8', '9', '']
+  - ['', '', F5, F6, F7, F8, '%', '4', '5', '6']
+  - ['=', '', '', '', F1, F2, F3, F4, MUTE, PP]
+  - - '0'
+    - '1'
+    - '2'
+    - '3'
+    - .
+    - ''
+    - TAB
+    - {t: LEFT COMMAND, type: held}
+    - CAPS
+    - ''
+  - - ''
+    - Ctl+SPACE
+    - Gui+SPACE
+    - {t: ▽, type: trans}
+  FUN:
+  - [BT CLR, '', '', '', '', '', '', '', '', BT CLR]
+  - ['', BT NXT, Sft+Gui+3, Sft+Gui+4, Sft+Alt+F, '', '', '', '', '']
+  - [BT NXT, '', '', BT PRV, '', '', '', EP OFF, MUTE, PP]
+  - [EP ON, '', '', '', BT PRV, '', '', '', '', '']
+  - - ''
+    - ''
+    - ''
+    - {type: held}
+combos:
+- p: [1, 12]
+  k: '@'
+  l: [BASE, NAV, NUM]
+- p: [2, 13]
+  k: '#'
+  l: [BASE, NAV, NUM]
+- p: [3, 14]
+  k: $
+  l: [BASE, NAV, NUM]
+- p: [4, 15]
+  k: '%'
+  l: [BASE, NAV, NUM]
+- p: [12, 24]
+  k: '`'
+  l: [BASE, NAV, NUM]
+- p: [13, 25]
+  k: \
+  l: [BASE, NAV, NUM]
+- p: [14, 26]
+  k: '='
+  l: [BASE, NAV, NUM]
+- p: [15, 27]
+  k: '~'
+  l: [BASE, NAV, NUM]
+- p: [24, 26]
+  k: Gui+X
+  l: [BASE, NAV, NUM]
+- p: [25, 26]
+  k: Gui+V
+  l: [BASE, NAV, NUM]
+- p: [24, 25]
+  k: Gui+C
+  l: [BASE, NAV, NUM]
+- p: [24, 23]
+  k: Gui+Z
+  l: [BASE, NAV, NUM]
+- p: [5, 16]
+  k: ^
+  l: [BASE, NAV, NUM]
+- p: [6, 17]
+  k: +
+  l: [BASE, NAV, NUM]
+- p: [7, 18]
+  k: '*'
+  l: [BASE, NAV, NUM]
+- p: [8, 19]
+  k: '&'
+  l: [BASE, NAV, NUM]
+- p: [16, 30]
+  k: _
+  l: [BASE, NAV, NUM]
+- p: [17, 31]
+  k: '-'
+  l: [BASE, NAV, NUM]
+- p: [18, 32]
+  k: /
+  l: [BASE, NAV, NUM]
+- p: [19, 33]
+  k: '|'
+  l: [BASE, NAV, NUM]
+- p: [6, 7]
+  k: '['
+  l: [BASE, NAV, NUM]
+- p: [7, 8]
+  k: ']'
+  l: [BASE, NAV, NUM]
+- p: [17, 18]
+  k: (
+  l: [BASE, NAV, NUM]
+- p: [18, 19]
+  k: )
+  l: [BASE, NAV, NUM]
+- p: [31, 32]
+  k: '{'
+  l: [BASE, NAV, NUM]
+- p: [32, 33]
+  k: '}'
+  l: [BASE, NAV, NUM]
+- p: [16, 17]
+  k: <
+  l: [BASE, NAV, NUM]
+- p: [19, 20]
+  k: '>'
+  l: [BASE, NAV, NUM]
+- p: [0, 1]
+  k: ESC
+  l: [BASE, NAV, NUM]
+- p: [11, 12]
+  k: CAPS
+  l: [BASE, NAV, NUM]
+- p: [14, 17]
+  k: '&caps_word'
+  l: [BASE, NAV, NUM]
