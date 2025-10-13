@@ -222,9 +222,9 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
                                  └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
 
             bindings = <
-       &ht_500 DOUBLE_QUOTES Q  &ht_500 GRAVE W         &kp E               &kp R                   &kp T                                       &kp Y          &ht_500 UNDER U  &ht_500 EXCLAMATION I  &ht_500 SEMICOLON O   &kp P
-&none  &ht_500 AT A             &ht_500 LEFT_CONTROL S  &ht_500 LEFT_ALT D  &ht_500 LEFT_COMMAND F  &ht_500 LEFT_SHIFT G                        &kp H          &ht_500 RCMD J   &ht_500 RALT K         &ht_500 RSHFT L       &kp RETURN  &none
-&none  &kp Z                    &kp X                   &kp C               &kp V                   &kp B                 &kp C_MUTE  &kp C_PP  &kp N          &kp M            &ht_500 SQT COMMA      &ht_500 QUESTION DOT  &kp SLASH   &none
+       &hml DOUBLE_QUOTES Q  &hml GRAVE W         &kp E               &kp R                   &kp T                                       &kp Y          &hmr UNDER U  &hmr EXCLAMATION I  &hmr SEMICOLON O   &kp P
+&none  &hml AT A             &hml LEFT_CONTROL S  &hml LEFT_ALT D  &hml LEFT_COMMAND F  &hml LEFT_SHIFT G                        &kp H          &hmr RCMD J   &hmr RALT K         &hmr RSHFT L       &kp RETURN  &none
+&none  &kp Z                    &kp X                   &kp C               &kp V                   &kp B                 &kp C_MUTE  &kp C_PP  &kp N          &kp M            &hmr SQT COMMA      &hmr QUESTION DOT  &kp SLASH   &none
                                                         &kp GLOBE           &kp TAB                 &mo 1                 &none       &none     &kp BACKSPACE  &kp SPACE        &mo 2
             >;
 
@@ -239,15 +239,15 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
             label = "RAISE";
 
             // └───────────────────────────────────────────────────────────┘
-            /*           ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
-             │ RGB_SPI │ RGB_HUI │         │         │    {    │                    │    }    │   LEFT  │   UP    │  RIGHT  │   HOME  │
-   ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
-   │ RGB_BRI │ RGB_EFF │         │         │         │    [    │                    │    ]    │         │  DOWN   │         │  PSCRN  │  P UP   │
-   ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
-   │ RGB_BRD │ RGB_SPD │ RGB_HUD │         │         │    (    ││  MUTE  ││PLY/PASE││    )    │         │         │         │   END   │ P DOWN  │
-   └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
-                                 │         │         │         │  LSHIFT ││  RSHIFT │         │         │  ADJUST │  
-                                 └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
+          /*          ┌─────────┬─────────┬─────────┬─────────┬─────────┐                    ┌─────────┬─────────┬─────────┬─────────┬─────────┐
+                      │ RGB_SPI │ RGB_HUI │         │         │    {    │                    │    }    │   LEFT  │   UP    │  RIGHT  │   HOME  │
+            ┌─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤                    ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┐
+            │ RGB_BRI │ RGB_EFF │         │         │         │    [    │                    │    ]    │         │  DOWN   │         │  PSCRN  │  P UP   │
+            ├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤╭────────╮╭────────╮├─────────┼─────────┼─────────┼─────────┼─────────┼─────────┤
+            │ RGB_BRD │ RGB_SPD │ RGB_HUD │         │         │    (    ││  MUTE  ││PLY/PASE││    )    │         │         │         │   END   │ P DOWN  │
+            └─────────┴─────────┴─────────┼─────────┼─────────┼─────────┼╰────────╯╰────────╯┼─────────┼─────────┼─────────┼─────────┴─────────┴─────────┘
+                                          │         │         │         │  LSHIFT ││  RSHIFT │         │         │  ADJUST │  
+                                          └─────────┴─────────┴─────────┴─────────┘└─────────┴─────────┴─────────┴─────────┘ */
 
             bindings = <
        &kp TAB         &kp PERCENT  &kp HASH        &kp DOLLAR  &kp LBRC                        &kp RBRC    &kp RC(UP_ARROW)  &kp EQUAL  &kp RG(TAB)         &kp RSHFT
