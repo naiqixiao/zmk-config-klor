@@ -27,11 +27,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define BASE   0
-#define RAISE  1
-#define LOWER  2
-#define ADJUST 3
-
 &led_strip { chain-length = <21>; };
 
 #define XXX &none
@@ -182,10 +177,10 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
             label = "BASE";
 
             bindings = <
-	                    &hml DOUBLE_QUOTES  Q   &hml GRAVE W    &kp E	&kp R	&kp T				&kp Y	&hmr UNDER U	&hmr EXCLAMATION I	&hmr SEMICOLON O	&kp P	
+	                    &hml DOUBLE_QUOTES  Q   &hml GRAVE W    &kp E	&kp R	&kp T				&kp Y	&hmr UNDER U	&hmr RS(I) I	&hmr SEMICOLON O	&kp P	
                 XXX	&hml LEFT_SHIFT A	&hml LEFT_CONTROL S	&hml LEFT_ALT D	&hml LEFT_COMMAND F	&hml AT G				&kp H	&hmr RCMD J	&hmr RALT K	&hmr RSHFT L	&kp RETURN	XXX
-                XXX	&kp Z	&kp X	&kp C	&kp V	&kp B	&kp C_MUTE		&kp C_PP	&kp N	&kp M	&hmr SQT COMMA	&hmr QUESTION DOT	&kp SLASH	XXX
-			                                    XXX	&lt NUM TAB	&lt NAV SPACE	XXX		XXX	&kp BACKSPACE	&kp SPACE	&mo FUN
+                XXX	&kp Z	&kp X	&kp C	&kp V	&kp B	&kp C_MUTE		&kp C_PP	&hmr EXCLAMATION N	&hmr COLN M	&hmr SQT COMMA	&hmr QUESTION DOT	&kp SLASH	XXX
+			                                &kp LEFT_COMMAND	&lt NUM TAB	&lt NAV SPACE	XXX		XXX	&kp BACKSPACE	&kp SPACE	&mo FUN
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &scroll_up_down>;
@@ -197,7 +192,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
             label = "NAV";
 
             bindings = <
-       XXX        XXX  XXX        XXX  XXX                        XXX    &kp RC(UP_ARROW)  &kp EQUAL  &kp RG(TAB)         &kp RSHFT
+       XXX        XXX  XXX        XXX  XXX                        XXX    &kp RC(UP_ARROW)  XXX  &kp RG(TAB)         XXX
 XXX  &sk LEFT_SHIFT    &sk LEFT_CONTROL    	&sk LEFT_ALT   	&sk LEFT_COMMAND   XXX                       &kp PG_UP    &kp LEFT          &kp UP     &kp RIGHT           &kp C_NEXT  XXX
 XXX  XXX  XXX     XXX       XXX   XXX  &kp C_MUTE  &kp C_PP  &kp PG_DN    &kp TAB           &kp DOWN   &kp RC(DOWN_ARROW)  &kp C_PREV  XXX
                                     &kp LEFT_SHIFT  &kp LALT    XXX     XXX       XXX     &kp DELETE  &kp RGUI          &mo 3
@@ -216,7 +211,7 @@ XXX  XXX  XXX     XXX       XXX   XXX  &kp C_MUTE  &kp C_PP  &kp PG_DN    &kp TA
        XXX   &kp F9  &kp F10  &kp F11     &kp F12               XXX &kp N7         &kp N8     &kp N9     XXX
 XXX   XXX   &kp F5   &kp F6   &kp F7    &kp F8                       &kp PERCENT      &kp N4       &kp N5  &kp N6  &kp EQUAL  XXX
 XXX   XXX   &kp F1  &kp F2   &kp F3     &kp F4     &kp C_MUTE  &kp C_PP  &kp N0        &kp N1         &kp N2     &kp N3     &kp DOT     XXX
-                             &kp TAB  &kp LEFT_COMMAND  &kp CAPS   XXX       XXX     &kp LC(SPACE)  &kp RG(SPACE)  &trans
+                             &kp BACKSPACE  XXX  &kp SPACE   XXX       XXX     &kp LC(SPACE)  &kp RG(SPACE)  &trans
             >;
 
             sensor-bindings =

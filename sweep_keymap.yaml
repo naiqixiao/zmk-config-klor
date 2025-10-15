@@ -8,7 +8,7 @@ layers:
     - T
     - Y
     - {t: U, h: _}
-    - {t: I, h: '!'}
+    - {t: I, h: Sft+I}
     - {t: O, h: ;}
     - P
   - - ''
@@ -22,8 +22,8 @@ layers:
     - {t: K, h: RALT}
     - {t: L, h: RSHFT}
   - [RETURN, '', '', Z, X, C, V, B, MUTE, PP]
-  - - N
-    - M
+  - - {t: N, h: '!'}
+    - {t: M, h: COLN}
     - {t: ',', h: ''''}
     - {t: ., h: '?'}
     - /
@@ -32,9 +32,12 @@ layers:
     - {t: TAB, h: NUM}
     - {t: SPACE, h: NAV}
     - ''
-  - ['', BACKSPACE, SPACE, FUN]
+  - - ''
+    - {t: BACKSPACE, h: Gui+BACKSPACE}
+    - SPACE
+    - FUN
   NAV:
-  - ['', '', '', '', '', '', Ctl+UP ARROW, '=', Gui+TAB, RSHFT]
+  - ['', '', '', '', '', '', Ctl+UP ARROW, '', Gui+TAB, '']
   - - ''
     - {t: LEFT SHIFT, h: sticky}
     - {t: LEFT CONTROL, h: sticky}
@@ -67,9 +70,9 @@ layers:
     - '3'
     - .
     - ''
-    - TAB
-    - {t: LEFT COMMAND, type: held}
-    - CAPS
+    - BACKSPACE
+    - {type: held}
+    - SPACE
     - ''
   - - ''
     - Ctl+SPACE
